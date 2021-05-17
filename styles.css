@@ -3,6 +3,9 @@
 :root {
   --success-color: #2ecc71;
   --error-color: #e74c3c;
+  --btn-color: #3498db;
+  --body-color: #f9fafb;
+  --container-color: #ffffff;
 }
 
 * {
@@ -11,7 +14,7 @@
 }
 
 body {
-  background: #f9fafb;
+  background: var(--body-color);
   font-family: 'Ubuntu', sans-serif;
   display: flex;
   align-items: center;
@@ -21,7 +24,7 @@ body {
 }
 
 .container {
-  background-color: #ffffff;
+  background-color: var(--container-color);
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   width: 400px;
@@ -72,4 +75,25 @@ h2 {
 
 .form-control small {
   color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  cursor: pointer;
+  background-color: var(--btn-color);
+  border: 2px solid var(--btn-color);
+  border-radius: 5px;
+  color: #ffffff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
