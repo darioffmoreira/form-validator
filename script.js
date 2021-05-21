@@ -39,7 +39,9 @@ form.addEventListener('submit', function (event) {
   console.log(username.value);
 
   if (username.value === '') {
+    console.log(username);
     showError(username, 'Username is required');
+    console.log(username);
   } else {
     showSuccess(username);
   }
@@ -64,3 +66,7 @@ form.addEventListener('submit', function (event) {
     showSuccess(password2);
   }
 });
+
+/*
+BUG: Se tivermos input preenchido ou vise versa e clicarmos submit os erros não alteram.
+*/
