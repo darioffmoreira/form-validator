@@ -30,23 +30,18 @@ function isValidEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-// Check required fields
-function checkRequired(input) {
-  console.log(input);
-}
-
 // Event listeners
 form.addEventListener('submit', function (event) {
   // Method called prevent default which prevents it from actually submitting, width this it doesn't flash , it doesn't actually submit the form
   event.preventDefault();
 
   // Get the value from username
-  // console.log(username.value);
+  console.log(username.value);
 
   if (username.value === '') {
-    // console.log(username);
+    console.log(username);
     showError(username, 'Username is required');
-    // console.log(username);
+    console.log(username);
   } else {
     showSuccess(username);
   }
@@ -70,9 +65,8 @@ form.addEventListener('submit', function (event) {
   } else {
     showSuccess(password2);
   }
-
-  checkRequired(username);
-  checkRequired(email);
-  checkRequired(password);
-  checkRequired(password2);
 });
+
+/*
+BUG: Se tivermos input preenchido ou vise versa e clicarmos submit os erros não alteram.
+*/
