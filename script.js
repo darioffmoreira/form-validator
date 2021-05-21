@@ -32,7 +32,10 @@ function isValidEmail(email) {
 
 // Check required fields
 function checkRequired(inputArr) {
-  console.log(inputArr);
+  // console.log(inputArr);
+  inputArr.forEach(function (input) {
+    console.log(input);
+  });
 }
 
 // Event listeners
