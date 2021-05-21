@@ -31,8 +31,8 @@ function isValidEmail(email) {
 }
 
 // Check required fields
-function checkRequired(input) {
-  console.log(input);
+function checkRequired(inputArr) {
+  console.log(inputArr);
 }
 
 // Event listeners
@@ -71,8 +71,5 @@ form.addEventListener('submit', function (event) {
     showSuccess(password2);
   }
 
-  checkRequired(username);
-  checkRequired(email);
-  checkRequired(password);
-  checkRequired(password2);
+  checkRequired([username, email, password, password2]);
 });
