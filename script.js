@@ -38,11 +38,16 @@ function checkRequired(inputArr) {
     // console.log(input.value.trim());
     // console.log(input.id);
     if (input.value.trim() === '') {
-      showError(input, `${input.id} is required`);
+      showError(input, `${getFieldName(input)} is required`);
     } else {
       showSuccess(input);
     }
   });
+}
+
+// Get fieldName
+function getFieldName(input) {
+  return input.id;
 }
 
 // Event listeners
