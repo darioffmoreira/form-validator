@@ -47,7 +47,7 @@ function checkRequired(inputArr) {
 
 // Get fieldName
 function getFieldName(input) {
-  return input.id.charAt(0);
+  return input.id.charAt(0).toUpperCase();
 }
 
 // Event listeners
