@@ -34,7 +34,14 @@ function isValidEmail(email) {
 function checkRequired(inputArr) {
   // console.log(inputArr);
   inputArr.forEach(function (input) {
-    console.log(input);
+    // console.log(input.value);
+    // console.log(input.value.trim());
+    // console.log(input.id);
+    if (input.value.trim() === '') {
+      showError(input, `${input.id} is required`);
+    } else {
+      showSuccess(input);
+    }
   });
 }
 
@@ -46,33 +53,33 @@ form.addEventListener('submit', function (event) {
   // Get the value from username
   // console.log(username.value);
 
-  if (username.value === '') {
-    // console.log(username);
-    showError(username, 'Username is required');
-    // console.log(username);
-  } else {
-    showSuccess(username);
-  }
+  // if (username.value === '') {
+  //   // console.log(username);
+  //   showError(username, 'Username is required');
+  //   // console.log(username);
+  // } else {
+  //   showSuccess(username);
+  // }
 
-  if (email.value === '') {
-    showError(email, 'Email is required');
-  } else if (!isValidEmail(email.value)) {
-    showError(email, 'Email is not valid');
-  } else {
-    showSuccess(email);
-  }
+  // if (email.value === '') {
+  //   showError(email, 'Email is required');
+  // } else if (!isValidEmail(email.value)) {
+  //   showError(email, 'Email is not valid');
+  // } else {
+  //   showSuccess(email);
+  // }
 
-  if (password.value === '') {
-    showError(password, 'Password is required');
-  } else {
-    showSuccess(password);
-  }
+  // if (password.value === '') {
+  //   showError(password, 'Password is required');
+  // } else {
+  //   showSuccess(password);
+  // }
 
-  if (password2.value === '') {
-    showError(password2, 'Password is required');
-  } else {
-    showSuccess(password2);
-  }
+  // if (password2.value === '') {
+  //   showError(password2, 'Password is required');
+  // } else {
+  //   showSuccess(password2);
+  // }
 
   checkRequired([username, email, password, password2]);
 });
