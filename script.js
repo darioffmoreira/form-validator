@@ -71,5 +71,5 @@ form.addEventListener('submit', function (event) {
 
   checkRequired([username, email, password, password2]);
   checkLength(username, 3, 15);
-  checkLength(username, 6, 25);
+  checkLength(password, 6, 25);
 });
