@@ -7,6 +7,11 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
+// Toggle-password
+const passInput = document.querySelector('[data-pwd-input]');
+const toggleBtn = document.querySelector('[data-pwd-toggle]');
+let showPassword = false;
+
 // Show input error message
 function showError(input, message) {
   //   console.log(input);
@@ -86,3 +91,30 @@ form.addEventListener('submit', function (event) {
   checkEmail(email);
   checkPasswordsMatch(password, password2);
 });
+
+// Toggle-password
+passInput.addEventListener('input', showToggleButton);
+passInput.addEventListener('focus', () => {
+  if (showPassword && passInput.value.length < 1) togglePasswordVisible();
+});
+
+toggleBtn.addEventListener('click', () => {
+  togglePasswordVisible();
+  passInput.focus();
+});
+
+function showToggleButton() {
+  if (passInput.value.length > 0) toggleBtn.style.display = 'block';
+  else toggleBtn.style.display = '';
+}
+
+function togglePasswordVisible() {
+  showPassword = !showPassword;
+  if (showPassword) {
+    toggleBtn.classList = 'fas fa-eye-slash';
+    passInput.setAttribute('type', 'text');
+  } else {
+    toggleBtn.classList = 'fas fa-eye';
+    passInput.setAttribute('type', 'password');
+  }
+}
